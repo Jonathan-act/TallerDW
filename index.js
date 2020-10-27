@@ -5,15 +5,12 @@ const app = express()
 const mongoose = require('mongoose')
 var persona_routes = require('./routes/personaRoute');
 
-
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
-
-
 app.use('/api',persona_routes);
 
-mongoose.connect('mongodb+srv://danielbustos86:daniel123@cluster0-wxfwq.mongodb.net/UBB202001?retryWrites=true&w=majority', (err, res) => {
+mongoose.connect('mongodb+srv://jonathan:84721539fF@jonathan-act.ohfoq.gcp.mongodb.net/TallerDW?retryWrites=true&w=majority', (err, res) => {
 
     if(err){
         console.log("NO CONECTA")

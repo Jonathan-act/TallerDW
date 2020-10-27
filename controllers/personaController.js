@@ -61,11 +61,24 @@ function todos(req, res) {
      })
 }
 
+function eliminarpersona(req, res) {
+
+    let rutpersona = req.params.rut
+    Persona.findByIdAndDelete(rutpersona, (err, persona) => {
+        if (err) return res.status(500).send({ message: 'error al realizar al eliminar persona' })
+        if (!persona) return res.status(404).send({ message: 'Error la persona no existe' })
+
+        res.status(200).send({ persona })
+    })
+}
+
 
 // Exportamos las funciones en un objeto json para poder usarlas en otros fuera de este fichero
 module.exports = {
     guardar,
     buscar,
-    buscarPorID,todos
+    buscarPorID,
+    todos,
+    eliminarpersona
     
 };
