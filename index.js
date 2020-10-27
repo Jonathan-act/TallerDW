@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 
 app.use('/api',persona_routes);
 
-mongoose.connect('mongodb+srv://jonathan:84721539fF@jonathan-act.ohfoq.gcp.mongodb.net/TallerDW?retryWrites=true&w=majority', (err, res) => {
+mongoose.connect('mongodb+srv://USERDB:PASS@CLUSTER.ohfoq.gcp.mongodb.net/DATABASE?retryWrites=true&w=majority', (err, res) => {
 
     if(err){
         console.log("NO CONECTA")
